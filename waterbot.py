@@ -20,9 +20,7 @@ from aiogram.types import ReplyKeyboardRemove, \
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 itembtn1 = types.KeyboardButton('да')
 itembtn2 = types.KeyboardButton('нет')
-knopka3 = types.KeyboardButton('я аква-мен')
-knopka4 = types.KeyboardButton('обезвоживание')
-markup.add(itembtn1, itembtn2, knopka3, knopka4)
+markup.add(itembtn1, itembtn2)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
