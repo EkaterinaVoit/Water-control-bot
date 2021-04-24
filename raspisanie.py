@@ -1,6 +1,7 @@
 import telebot
 import datetime
 import time
+import schedule
 from datetime import datetime
 from telebot import types
 now = datetime.now()
@@ -14,16 +15,19 @@ chat_id= '1506364107'
 user_id='485308239'
 
 
+from aiogram.types import ReplyKeyboardRemove, \
+    ReplyKeyboardMarkup, KeyboardButton, \
+    InlineKeyboardMarkup, InlineKeyboardButton
 
-#отправка сообщения в заданное нами время:
-import schedule
-import time
+markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+knopka3 = types.KeyboardButton('я аква-мен')
+knopka4 = types.KeyboardButton('обезвоживание')
+markup.add(knopka3, knopka4)
 
 def job():
-    bot.send_message(user_id, "I'm working...")
+    bot.send_message(user_id, "Вы уже пили воду сегодня?", reply_markup=markup)
 
-
-schedule.every().day.at("16:10").do(job)
+schedule.every().day.at("12:47").do(job)
 
 while True:
     schedule.run_pending()
