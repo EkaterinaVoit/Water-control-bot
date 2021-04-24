@@ -4,16 +4,12 @@ import time
 import schedule
 from datetime import datetime
 from telebot import types
-now = datetime.now()
-current_time = now.strftime("%H:%M:%S")
-print("Current Time =", current_time)
 
 bot = telebot.TeleBot("1506364107:AAHCWzAP0Vov1DH8fuSZom_UXcTy5MvzHUg")
 TOKEN = '1506364107:AAHCWzAP0Vov1DH8fuSZom_UXcTy5MvzHUg'
 bot = telebot.TeleBot(TOKEN)
 chat_id= '1506364107'
 user_id='485308239'
-
 
 from aiogram.types import ReplyKeyboardRemove, \
     ReplyKeyboardMarkup, KeyboardButton, \
