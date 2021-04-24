@@ -12,6 +12,8 @@ TOKEN = '1506364107:AAHCWzAP0Vov1DH8fuSZom_UXcTy5MvzHUg'
 bot = telebot.TeleBot(TOKEN)
 chat_id= '1506364107'
 user_id='485308239'
+picture1 = "https://i.pinimg.com/originals/dc/24/f4/dc24f4dd8487e2e391084c9ae5004451.jpg"
+picture2 = "https://i.pinimg.com/originals/5b/83/70/5b83707a6732fcce90b1b571207f9ea8.jpg"
 
 from aiogram.types import ReplyKeyboardRemove, \
     ReplyKeyboardMarkup, KeyboardButton, \
@@ -36,14 +38,17 @@ def get_text_messages(message):
     elif message.text.lower() == 'нет':
         a = telebot.types.ReplyKeyboardRemove()
         bot.send_message(message.from_user.id, 'Вы меня огорчаете(', reply_markup=a)
-    elif message.text.lower() == 'я аква-мен':
+    elif message.text.lower() == 'водичка наполняет меня!':
         a = telebot.types.ReplyKeyboardRemove()
-        bot.send_message(user_id, 'Вы супер!', reply_markup=a)
-    elif message.text.lower() == 'обезвоживание':
+        bot.send_message(user_id, 'Вы супер!(づ ◕‿◕ )づ', reply_markup=a)
+        bot.send_photo(user_id, picture1)
+    elif message.text.lower() == 'прием воды пропущен :(':
         a = telebot.types.ReplyKeyboardRemove()
-        bot.send_message(user_id, 'не умирайте плиз', reply_markup=a)
+        bot.send_message(user_id, 'Попейте, пожалуйста!', reply_markup=a)
+        bot.send_photo(user_id, picture2)
            
 bot.polling()
+
 
 
 
