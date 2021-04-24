@@ -20,14 +20,14 @@ from aiogram.types import ReplyKeyboardRemove, \
     InlineKeyboardMarkup, InlineKeyboardButton
 
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-knopka3 = types.KeyboardButton('я аква-мен')
-knopka4 = types.KeyboardButton('обезвоживание')
+knopka3 = types.KeyboardButton('водичка наполняет меня!')
+knopka4 = types.KeyboardButton('прием воды пропущен :(')
 markup.add(knopka3, knopka4)
 
 def job():
-    bot.send_message(user_id, "Вы уже пили воду сегодня?", reply_markup=markup)
+    bot.send_message(user_id, "Вы уже пили воду сегодня?, reply_markup=markup)
 
-schedule.every().day.at("12:47").do(job)
+schedule.every().day.at("20:09").do(job)
 
 while True:
     schedule.run_pending()
