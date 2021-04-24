@@ -25,7 +25,7 @@ knopka4 = types.KeyboardButton('прием воды пропущен :(')
 markup.add(knopka3, knopka4)
 
 def job():
-    bot.send_message(user_id, "Вы уже пили воду сегодня?, reply_markup=markup)
+    bot.send_message(user_id, "Вы уже пили воду сегодня?", reply_markup=markup)
 
 schedule.every().day.at("20:09").do(job)
 
