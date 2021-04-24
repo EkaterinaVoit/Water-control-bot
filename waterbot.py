@@ -24,11 +24,15 @@ itembtn1 = types.KeyboardButton('да')
 itembtn2 = types.KeyboardButton('нет')
 markup.add(itembtn1, itembtn2)
 
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message, "Привет! Я бот, который поможет тебе поддерживать водный баланс! ")
 	bot.send_message(user_id, "Вы готовы начать?", reply_markup=markup)
-          
+	
+@bot.message_handler(commands=['help'])
+def send_help(message):
+	bot.reply_to(message, "Если Вы нажали на данную кнопку, значит Вам нужна помощь!\nЗачем я нужен? — Я нужен для того, чтобы Вам было удобнее сохранять водный баланс!\nКак меня запустить? — Просто выберите команду '/start' или же введите ее собственноручно!\nЖелаю Вам приятного использования Бота!")
+ 	         
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text.lower() == 'да':
