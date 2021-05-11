@@ -23,7 +23,7 @@ markup.add(knopka3, knopka4)
 def job():
     bot.send_message(user_id, "Вы уже пили воду сегодня?", reply_markup=markup)
 
-schedule.every().day.at("17:09").do(job)
+schedule.every().day.at("21:30").do(job)
 
 def good_mo():
     bot.send_message(user_id, "Доброе утро! 🌞 \nПопейте,ожалуйста, воду!")
@@ -38,7 +38,7 @@ schedule.every().day.at("13:00").do(good_day)
 def good_ev():
     bot.send_message(user_id, "Вечером тоже нужно пить воду! 💗 ")
 
-schedule.every().day.at("17:23").do(good_ev)
+schedule.every().day.at("18:00").do(good_ev)
 
 def good_ni():
     bot.send_message(user_id, "Доброй ночи! 🌙 \nПопейте, перед сном, пожалуйста! ")
