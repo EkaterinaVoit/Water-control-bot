@@ -9,8 +9,6 @@ from subprocess import call
 import sys
 
 bot = telebot.TeleBot("1506364107:AAHCWzAP0Vov1DH8fuSZom_UXcTy5MvzHUg")
-TOKEN = '1506364107:AAHCWzAP0Vov1DH8fuSZom_UXcTy5MvzHUg'
-bot = telebot.TeleBot(TOKEN)
 picture1 = "https://i.pinimg.com/originals/dc/24/f4/dc24f4dd8487e2e391084c9ae5004451.jpg"
 picture2 = "https://i.pinimg.com/originals/5b/83/70/5b83707a6732fcce90b1b571207f9ea8.jpg"
 
@@ -22,7 +20,6 @@ markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 itembtn1 = types.KeyboardButton('Да🤗')
 itembtn2 = types.KeyboardButton('Нет😔')
 markup.add(itembtn1, itembtn2)
-
 
 morkov = types.ReplyKeyboardMarkup(resize_keyboard=True)
 vremya1 = types.KeyboardButton('18:00')
@@ -37,10 +34,6 @@ def send_welcome(message):
                 bot.reply_to(message, "Привет! Я бот, который поможет тебе поддерживать водный баланс! ")
                 bot.send_message(message.from_user.id, "Вы готовы начать?", reply_markup=markup)
 
-@bot.message_handler(commands=['help'])
-def send_help(message):
-	bot.reply_to(message.from_user.id, "Если Вы нажали на данную кнопку, значит Вам нужна помощь!\nЗачем я нужен? — Я нужен для того, чтобы Вам было удобнее сохранять водный баланс!\nКак меня запустить? — Просто выберите команду '/start' или же введите ее собственноручно!\nЖелаю Вам приятного использования Бота!")
-                     
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == 'Да🤗':
